@@ -11,8 +11,9 @@ const App = () => {
   const handleFileUpload = async (file) => {
     try {
       // Upload the file to LogMeal API
-      const { foodName } = await detectFood(file);
-
+      const { foodName, probability, nutriInfo } = await detectFood(file);
+      console.log(probability);
+      console.log(nutriInfo);
       // Fetch allergen data from Firebase
       const allergenData = await getAllergenData();
 

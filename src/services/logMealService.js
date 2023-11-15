@@ -39,35 +39,28 @@ export const detectFood = async (file) => {
       }
     );
 
-    console.log(dishResponse.data.segmentation_results[0]['recognition_results'][0]['id']);
-    console.log(dishResponse.data.segmentation_results[0]['recognition_results'][0]['name']);
-    console.log(dishResponse.data.imageId);
-    const dishDescription = {
-      'dish_id': dishResponse.data.segmentation_results[0]['recognition_results'][0]['id'],
-      'foodName': dishResponse.data.segmentation_results[0]['recognition_results'][0]['name'],
-      'hasRecipe': false,
-      'imageId': dishResponse.data.imageId,
-      'is_combo': false,
-      'recipe': [],
-      'recipe_per_item': [],
-      'serving_size': 1,
-      'source': ""
-    }
+    const {imageId} = dishResponse.data;
+    const recipeNutriParams = {
+      imageId: imageId
+    };
+
     const nutriResponse = await axios.post(
       configuration.LOGMEAL_API_URL + configuration.LOGMEAL_API_NUTRIPATH,
-      dishDescription,
+      recipeNutriParams,
       {
         headers: {
-          "Content-Type": "multipart/form-data",
+          "Content-Type": "application/json",
           Authorization: "Bearer " + configuration.LOGMEAL_API_KEY,
         },
       }
     );
+    const { recipe } = nutriResponse.data;
+    const ingredients = recipe.map((item) => item.name);
 
     return {
-      'foodName': dishResponse.data.foodFamily[0]["name"],
-      'probability': dishResponse.data.foodFamily[0]["prob"],
-     'nutriInfo': nutriResponse.data,
+      foodName: dishResponse.data.foodFamily[0]["name"],
+      probability: dishResponse.data.foodFamily[0]["prob"],
+      nutriInfo: ingredients,
     };
   } catch (error) {
     throw new Error("Error detecting food:", error);
