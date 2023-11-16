@@ -1,7 +1,7 @@
 // App.js
 import React, { useState } from 'react';
 import FileUpload from './components/FileUpload';
-import { detectFood } from './services/logMealService';
+// import { detectFood } from './services/logMealService';
 import { getAllergenData } from './services/firebaseService';
 
 const App = () => {
@@ -11,16 +11,19 @@ const App = () => {
   const handleFileUpload = async (file) => {
     try {
       // Upload the file to LogMeal API
-      const { foodName, probability, nutriInfo } = await detectFood(file);
-      console.log(probability);
-      console.log(nutriInfo);
+      // const { foodName, probability, nutriInfo } = await detectFood(file);
+      // console.log(probability);
+      // console.log(nutriInfo);
       // Fetch allergen data from Firebase
-      const allergenData = await getAllergenData();
+      const nutriInfo = ['pasta', 'pork', 'onion', 'green pepper', 'olive oil', 'tomato', 'garlic', 'basil', 'oregano', 'salt', 'black pepper', 'red pepper'];
+      const allergenData = await getAllergenData(nutriInfo);
 
       // Cross-reference allergens
-      const allergens = allergenData[foodName] || [];
+      const allergens = allergenData["pasta"] || [];
 
-      setDetectedFood(foodName);
+      // setDetectedFood(foodName);
+      // setPossibleAllergens(allergens);
+      setDetectedFood("pasta");
       setPossibleAllergens(allergens);
     } catch (error) {
       console.error('Error detecting food:', error);
