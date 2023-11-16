@@ -38,7 +38,7 @@ export const getAllergenData = async (nutriInfo) => {
                   if (!allergenData[category]) {
                     allergenData[category] = [];
                   }
-                  allergenData[category].push({ [allergen]: foundValue });
+                  allergenData[category].push(foundValue);
                 }
               });
             }
