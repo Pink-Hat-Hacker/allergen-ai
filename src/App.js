@@ -1,5 +1,6 @@
 // App.js
 import React, { useState } from "react";
+import { useWindowSize } from 'react-use';
 import FileUpload from "./components/FileUpload";
 import { detectFood } from "./services/logMealService";
 import { getAllergenData } from "./services/firebaseService";
@@ -18,9 +19,10 @@ import "./App.css";
 
 const App = () => {
   const [detectedFood, setDetectedFood] = useState("");
-  const [possibleAllergens, setPossibleAllergens] = useState([]);
+  const [possibleAllergens, setPossibleAllergens] = useState({});
   const [prob, setProb] = useState();
   const [nutri, setNutriInfo] = useState([]);
+  const { width } = useWindowSize();
 
   const handleFileUpload = async (file) => {
     try {
@@ -45,14 +47,15 @@ const App = () => {
         className="aa-title"
         color="iris"
         align="left"
-        size={{initial:'9'}}
+        size={{ initial: "9" }}
         style={{ paddingLeft: "20px", paddingTop: "20px" }}
       >
         allergen.ai
       </Heading>
 
       <Grid
-        columns="2"
+        columns={width >= 750 ? "2" : undefined}
+        rows={width < 750 ? "2" : undefined}
         width="auto"
         gap="9"
         pl="5"
@@ -65,9 +68,18 @@ const App = () => {
           direction="column"
           align="center"
           justify="center"
-          style={{ background: "var(--iris-a3)", borderRadius: "1em"}}
+          style={{ background: "var(--iris-a3)", borderRadius: "1em" }}
         >
-          <Box width="100%" height="100%" className="aa-file-upload box" style={{alignItems: "center", textAlign: "center", justifyContent:"center"}}>
+          <Box
+            width="100%"
+            height="100%"
+            className="aa-file-upload box"
+            style={{
+              alignItems: "center",
+              textAlign: "center",
+              justifyContent: "center",
+            }}
+          >
             <FileUpload onFileUpload={handleFileUpload} />
           </Box>
           <Button className="aa-file-upload bt" size="4" variant="solid">
@@ -81,17 +93,30 @@ const App = () => {
           direction="column"
           align="start"
           justify="center"
-          style={{ background: "var(--iris-a3)", borderRadius: "1em"}}
+          style={{ background: "var(--iris-a3)", borderRadius: "1em" }}
         >
           <Box className="aa-response food-detection">
             <Text size="7" weight="light">
-              detected food: <Strong>{detectedFood}</Strong> with <Badge size="2" color="green">{prob}%</Badge> probability
+              detected food:
+            </Text>
+            <Text size="7">
+              <Strong> {detectedFood} </Strong>
+            </Text>
+            <Text
+              size="7"
+              color="green"
+              style={{ background: "var(--green-a3)", borderRadius: ".2em" }}
+            >
+              <Strong>{prob}%</Strong>
             </Text>
           </Box>
 
           <Box width="100%" className="aa-response ingredient-list">
-            <Text size="7" weight="light">probable <Strong>ingredients:</Strong></Text>
-            <br></br><br></br>
+            <Text size="7" weight="light">
+              probable ingredients:
+            </Text>
+            <br></br>
+            <br></br>
             {nutri.map((ingre, index) => (
               <Badge
                 mr="3"
@@ -100,11 +125,11 @@ const App = () => {
                 key={ingre}
                 color={
                   index % 4 === 0
-                    ? "green"
+                    ? "iris"
                     : index % 4 === 1
-                    ? "pink"
+                    ? "plum"
                     : index % 4 === 2
-                    ? "blue"
+                    ? "lime"
                     : "yellow"
                 }
               >
@@ -114,16 +139,13 @@ const App = () => {
           </Box>
 
           <Box className="aa-response allergen-list">
-            <Text size="7">probable <Strong>allergens:</Strong></Text>
-            <Grid rows={possibleAllergens.length} width="auto">
-              <ul style={{listStyleType: "none"}}>
-                {Object.entries(possibleAllergens).map(([key, values]) => (
-                  <li id={key} key={key}>
-                    <Badge color="red">{key}:</Badge> {values.join(", ")}
-                  </li>
-                ))}
-              </ul>
-            </Grid>
+            <Text size="7">probable allergens:</Text>
+            <br></br><br></br>
+            {Object.entries(possibleAllergens).map(([key, values]) => (
+              <Badge id={key} key={key} mb="2" mr="3" size="2" color="red" variant="surface">
+                <strong>{key}:</strong> {values.join(", ")}
+              </Badge>
+            ))}
           </Box>
         </Flex>
       </Grid>
