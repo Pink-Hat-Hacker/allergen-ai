@@ -58,7 +58,7 @@ export const detectFood = async (file) => {
     const ingredients = recipe.map((item) => item.name);
 
     return {
-      foodName: dishResponse.data.foodFamily[0]["name"],
+      foodName: dishResponse.data.foodFamily[0]["name"] + " " + nutriResponse.data.foodName,
       probability: dishResponse.data.foodFamily[0]["prob"],
       nutriInfo: ingredients,
     };
