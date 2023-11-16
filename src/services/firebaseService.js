@@ -2,7 +2,6 @@
 import { initializeApp } from "firebase/app";
 import { getDatabase, get, child, ref } from "firebase/database";
 import { firebaseConfig } from "../config";
-import { all } from "axios";
 
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
@@ -18,43 +17,31 @@ export const getAllergenData = async (nutriInfo) => {
           const allergenCategoriesSnapshot = snapshot.val();
           console.log(allergenCategoriesSnapshot);
 
-          // Flatten the allergen categories and allergens into a single array
-          const flatAllergens = Object.entries(allergenCategoriesSnapshot)
-          .flatMap(([category, allergens]) => Object.entries(allergens)
-            .map(([allergen, allergenValue]) => {
-              // Convert allergenValue to lowercase if it's a string or an object
-              const lowercasedValue = typeof allergenValue === 'string'
-                ? allergenValue.toLowerCase()
-                : Array.isArray(allergenValue)
-                  ? allergenValue.map(value => (value).toLowerCase())
-                  : allergenValue;
-    
-              return {
-                category: category.toLowerCase(),
-                allergen: allergen.toLowerCase(),
-                allergenValue: lowercasedValue,
-              };
-            })
-          );
+          // Iterate through each category
+          Object.entries(allergenCategoriesSnapshot).forEach(
+            ([category, allergens]) => {
+              // Iterate through each allergen in the category
+              Object.entries(allergens).forEach(([allergen, allergenValue]) => {
+                // Check if any value from nutriInfo is included in the allergen values
+                const foundValue = nutriInfo.find((info) => {
+                  if (typeof allergenValue === "object") {
+                    // Check if the allergenValue is an object (subcategories)
+                    return Object.values(allergenValue).includes(info);
+                  } else {
+                    // Check if the allergenValue is a string
+                    return allergenValue === info;
+                  }
+                });
 
-          console.log(flatAllergens);
-          // Filter the flatAllergens based on nutriInfo
-          const matchedAllergens = flatAllergens.filter(({ allergenValue }) =>
-            nutriInfo.includes(allergenValue)
-          );
-
-          console.log(matchedAllergens);
-
-          // Group the matched allergens by category
-          const allergenData = matchedAllergens.reduce(
-            (result, { category, allergen }) => {
-              if (!result[category]) {
-                result[category] = [];
-              }
-              result[category].push(allergen);
-              return result;
-            },
-            {}
+                // If found, add the allergen category and allergen value to allergenData
+                if (foundValue) {
+                  if (!allergenData[category]) {
+                    allergenData[category] = [];
+                  }
+                  allergenData[category].push({ [allergen]: foundValue });
+                }
+              });
+            }
           );
           console.log(allergenData);
         } else {
