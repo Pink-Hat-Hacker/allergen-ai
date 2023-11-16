@@ -1,6 +1,13 @@
-
-
-.aa-file-upload {
+.aa-file-upload.box {
     border: 2px dashed #fff;
     cursor: pointer;
+}
+
+.aa-file-upload.bt{
+    width: 100%;
+}
+
+.aa-response.ingredient-list {
+    display: flex;
+    justify-content: space-between;
 }
