@@ -118,7 +118,7 @@ const App = () => {
             <Grid rows={possibleAllergens.length} width="auto">
               <ul style={{listStyleType: "none"}}>
                 {Object.entries(possibleAllergens).map(([key, values]) => (
-                  <li key={key}>
+                  <li id={key} key={key}>
                     <Badge color="red">{key}:</Badge> {values.join(", ")}
                   </li>
                 ))}
