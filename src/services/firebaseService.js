@@ -7,7 +7,7 @@ const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 const dbRef = ref(database);
 
-export const getAllergenData = (nutriInfo) => {
+export const getAllergenData = async (nutriInfo) => {
   console.log(nutriInfo);
   try {
     const allergenData = {};

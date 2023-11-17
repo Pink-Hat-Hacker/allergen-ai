@@ -1,5 +1,5 @@
 // App.js
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useWindowSize } from "react-use";
 import FileUpload from "./components/FileUpload";
 import { detectFood } from "./services/logMealService";
@@ -9,7 +9,6 @@ import {
   Grid,
   Flex,
   Heading,
-  Button,
   Text,
   Link,
   Strong,
@@ -27,12 +26,27 @@ import {
 } from "@radix-ui/react-icons";
 
 const App = () => {
+
+  // Color changer to ensure state is always changing
+  const [currentColorIndex, setCurrentColorIndex] = useState(0);
+  const colors = ['iris', 'iris'];
+  useEffect(() => {
+    // Set up an interval to cycle through colors
+    const intervalId = setInterval(() => {
+      setCurrentColorIndex((prevIndex) => (prevIndex + 1) % colors.length);
+    }, 100); // Adjust the interval as needed (in milliseconds)
+
+    // Clean up the interval when the component is unmounted
+    return () => clearInterval(intervalId);
+  }, [colors.length, currentColorIndex]);
+  const currentColor = colors[currentColorIndex];
+
+  // API and Detection States
   const [detectedFood, setDetectedFood] = useState("");
-  const [possibleAllergens, setPossibleAllergens] = useState([]);
+  const [possibleAllergens, setPossibleAllergens] = useState({});
   const [prob, setProb] = useState();
   const [nutri, setNutriInfo] = useState([]);
   const { width } = useWindowSize();
-
 
   const handleFileUpload = async (file) => {
     try {
@@ -45,13 +59,13 @@ const App = () => {
       // Fetch allergen data from Firebase
       getAllergenData(nutriInfo)
       .then((allergenData) => {
-        console.log(allergenData)
         setPossibleAllergens(allergenData);
       })
       .catch((error) => {
         console.error('Error fetching allergen data:', error);
       });
-      console.log(possibleAllergens);
+
+      
     } catch (error) {
       console.error("Error detecting food:", error);
     }
@@ -62,7 +76,7 @@ const App = () => {
       <Flex justify="between" align="center">
         <Heading
           className="aa-title"
-          color="iris"
+          color={currentColor}
           size={{ initial: "9" }}
           style={{ paddingLeft: "20px", paddingTop: "20px" }}
         >
