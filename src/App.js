@@ -178,7 +178,7 @@ const App = () => {
                 mt="2"
                 mr="3"
                 size="2"
-                color="orange"
+                color="red"
                 variant="surface"
               >
                 <strong>{key}:</strong> {values.join(", ")}
