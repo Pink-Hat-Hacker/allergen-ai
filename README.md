@@ -6,6 +6,7 @@
   <a href="https://github.com/pink-hat-hacker/allergen-ai">
     <img src="src/assets/logo.png" alt="Logo">
   </a>
+  <p>
     <a href="https://pink-hat-hacker.github.io/allergen-ai">View Site</a>
     ·
     <a href="https://github.com/pink-hat-hacker/allergen-ai/issues">Report Bug or Request Feature</a>
