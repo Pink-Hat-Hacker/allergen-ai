@@ -28,23 +28,23 @@ import {
 
 const App = () => {
   const [detectedFood, setDetectedFood] = useState("");
-  const [possibleAllergens, setPossibleAllergens] = useState({});
+  const [possibleAllergens, setPossibleAllergens] = useState([]);
   const [prob, setProb] = useState();
   const [nutri, setNutriInfo] = useState([]);
   const { width } = useWindowSize();
+
 
   const handleFileUpload = async (file) => {
     try {
       // Upload the file to LogMeal API
       const { foodName, probability, nutriInfo } = await detectFood(file);
+      setProb((probability * 100).toFixed(2));
+      setDetectedFood(foodName);
+      setNutriInfo(nutriInfo);
 
       // Fetch allergen data from Firebase
       const allergenData = await getAllergenData(nutriInfo);
-
-      setDetectedFood(foodName);
       setPossibleAllergens(allergenData);
-      setProb((probability * 100).toFixed(2));
-      setNutriInfo(nutriInfo);
     } catch (error) {
       console.error("Error detecting food:", error);
     }
@@ -178,7 +178,7 @@ const App = () => {
                 mt="2"
                 mr="3"
                 size="2"
-                color="red"
+                color="orange"
                 variant="surface"
               >
                 <strong>{key}:</strong> {values.join(", ")}
