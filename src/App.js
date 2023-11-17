@@ -43,8 +43,15 @@ const App = () => {
       setNutriInfo(nutriInfo);
 
       // Fetch allergen data from Firebase
-      const allergenData = await getAllergenData(nutriInfo);
-      setPossibleAllergens(allergenData);
+      getAllergenData(nutriInfo)
+      .then((allergenData) => {
+        console.log(allergenData)
+        setPossibleAllergens(allergenData);
+      })
+      .catch((error) => {
+        console.error('Error fetching allergen data:', error);
+      });
+      console.log(possibleAllergens);
     } catch (error) {
       console.error("Error detecting food:", error);
     }
