@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.946ffb18.css",
-    "main.js": "/static/js/main.7a5e74cd.js",
-    "static/js/787.9a97a147.chunk.js": "/static/js/787.9a97a147.chunk.js",
-    "index.html": "/index.html",
-    "main.946ffb18.css.map": "/static/css/main.946ffb18.css.map",
-    "main.7a5e74cd.js.map": "/static/js/main.7a5e74cd.js.map",
-    "787.9a97a147.chunk.js.map": "/static/js/787.9a97a147.chunk.js.map"
+    "main.css": "/allergen-ai/static/css/main.946ffb18.css",
+    "main.js": "/allergen-ai/static/js/main.24e34cb4.js",
+    "static/js/787.9a97a147.chunk.js": "/allergen-ai/static/js/787.9a97a147.chunk.js",
+    "index.html": "/allergen-ai/index.html",
+    "main.946ffb18.css.map": "/allergen-ai/static/css/main.946ffb18.css.map",
+    "main.24e34cb4.js.map": "/allergen-ai/static/js/main.24e34cb4.js.map",
+    "787.9a97a147.chunk.js.map": "/allergen-ai/static/js/787.9a97a147.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.946ffb18.css",
-    "static/js/main.7a5e74cd.js"
+    "static/js/main.24e34cb4.js"
   ]
 }
