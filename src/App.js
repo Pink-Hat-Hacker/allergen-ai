@@ -14,7 +14,7 @@ import {
   Strong,
   Badge,
   Tooltip,
-  IconButton,
+  IconButton
 } from "@radix-ui/themes";
 
 import "./App.css";
@@ -22,11 +22,10 @@ import {
   ExclamationTriangleIcon,
   GitHubLogoIcon,
   LinkedInLogoIcon,
-  VercelLogoIcon,
+  VercelLogoIcon
 } from "@radix-ui/react-icons";
 
 const App = () => {
-
   // Color changer to ensure state is always changing
   const [currentColorIndex, setCurrentColorIndex] = useState(0);
   const colors = ['iris', 'iris'];
