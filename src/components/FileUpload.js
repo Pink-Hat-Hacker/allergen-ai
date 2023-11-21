@@ -32,7 +32,11 @@ const FileUpload = ({ onFileUpload }) => {
 
   const { getRootProps, getInputProps } = useDropzone({
     onDrop,
-    accept: "image/*",
+    accept: {
+      'image/jpeg': ['.jpg', '.jpeg', '.JPG', '.JPEG'],
+      'image/png': ['.png'],
+      'image/heic': ['.heic']
+    },
   });
 
   return (

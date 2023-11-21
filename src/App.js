@@ -61,11 +61,11 @@ const App = () => {
         setPossibleAllergens(allergenData);
       })
       .catch((error) => {
+        alert(`Error fetching allergen data: ${error}`);
         console.error('Error fetching allergen data:', error);
       });
-
-      
     } catch (error) {
+      alert(`Error detecting food: ${error}`);
       console.error("Error detecting food:", error);
     }
   };
