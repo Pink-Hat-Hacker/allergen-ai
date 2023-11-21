@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/allergen-ai/static/css/main.946ffb18.css",
-    "main.js": "/allergen-ai/static/js/main.5a195d12.js",
+    "main.js": "/allergen-ai/static/js/main.18a4b411.js",
     "static/js/787.9a97a147.chunk.js": "/allergen-ai/static/js/787.9a97a147.chunk.js",
     "index.html": "/allergen-ai/index.html",
     "main.946ffb18.css.map": "/allergen-ai/static/css/main.946ffb18.css.map",
-    "main.5a195d12.js.map": "/allergen-ai/static/js/main.5a195d12.js.map",
+    "main.18a4b411.js.map": "/allergen-ai/static/js/main.18a4b411.js.map",
     "787.9a97a147.chunk.js.map": "/allergen-ai/static/js/787.9a97a147.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.946ffb18.css",
-    "static/js/main.5a195d12.js"
+    "static/js/main.18a4b411.js"
   ]
 }
