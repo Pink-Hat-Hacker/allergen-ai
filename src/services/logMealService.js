@@ -78,6 +78,7 @@ export const detectFood = async (file) => {
       nutriInfo: ingredients,
     };
   } catch (error) {
-    throw new Error("Error detecting food:", error);
+    console.log("logMealService.js: " + error);
+    throw new Error("logMealService.js: :" + error);
   }
 };

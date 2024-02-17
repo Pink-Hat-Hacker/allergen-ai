@@ -49,11 +49,12 @@ export const getAllergenData = async (nutriInfo) => {
         }
       })
       .catch((error) => {
-        console.error(error);
+        console.log("Error iterating through allergen data: " + error);
+        throw new Error("Error iterating through allergen data: " + error)
       });
 
     return allergenData;
   } catch (error) {
-    throw new Error("Error fetching allergen data:", error);
+    throw new Error("Error fetching allergen data:" + error);
   }
 };
