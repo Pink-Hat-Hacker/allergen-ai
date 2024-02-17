@@ -14,7 +14,8 @@ import {
   Strong,
   Badge,
   Tooltip,
-  IconButton
+  IconButton,
+  Callout,
 } from "@radix-ui/themes";
 
 import "./App.css";
@@ -22,13 +23,13 @@ import {
   ExclamationTriangleIcon,
   GitHubLogoIcon,
   LinkedInLogoIcon,
-  VercelLogoIcon
+  VercelLogoIcon,
 } from "@radix-ui/react-icons";
 
 const App = () => {
   // Color changer to ensure state is always changing
   const [currentColorIndex, setCurrentColorIndex] = useState(0);
-  const colors = ['iris', 'iris'];
+  const colors = ["iris", "iris"];
   useEffect(() => {
     // Set up an interval to cycle through colors
     const intervalId = setInterval(() => {
@@ -57,16 +58,16 @@ const App = () => {
 
       // Fetch allergen data from Firebase
       getAllergenData(nutriInfo)
-      .then((allergenData) => {
-        setPossibleAllergens(allergenData);
-      })
-      .catch((error) => {
-        console.log('Error fetching allergen data:', error);
-        alert(`Error fetching allergen data: ${error}`);
-      });
+        .then((allergenData) => {
+          setPossibleAllergens(allergenData);
+        })
+        .catch((error) => {
+          console.log("Error fetching allergen data:", error);
+          alert(`Error fetching allergen data: ${error}`);
+        });
     } catch (error) {
       console.log("Error detecting food:", error);
-      alert(`Error detecting food: ${error}`); 
+      alert(`Error detecting food: ${error}`);
     }
   };
 
@@ -111,15 +112,30 @@ const App = () => {
           </IconButton>
         </Flex>
       </Flex>
+      
+      <Flex pt={"5"} pb={"0"} align={"center"} justify={"center"}>
+        {/* Temporary error container. LogMeal free trial is up. */}
+        <Callout.Root color="red" size={"3"}>
+          <Callout.Icon>
+            <ExclamationTriangleIcon />
+          </Callout.Icon>
+          <Callout.Text>
+            allergen-ai is DOWN for rebuild. My LogMeal API free trial is ...
+            depleted. If you would like to learn more about the project visit its
+            <Link href="https://github.com/pink-hat-hacker/allergen-ai"> GitHub repo </Link> or watch this <Link href="https://youtu.be/KKe5K4mbMAo"> Video</Link>.
+          </Callout.Text>
+        </Callout.Root>
+      </Flex>
 
       <Grid
-        columns={width >= 750 ? "2" : undefined}
-        rows={width < 750 ? "2" : undefined}
+        columns={width >= 800 ? "2" : undefined}
+        rows={width < 800 ? "2" : undefined}
         width="auto"
         gap="9"
         pl="5"
         pr="5"
-        style={{ paddingTop: "10%" }}
+        style={{ paddingTop: "5%" }} 
+        // changed padding to 5% from 10% for error container
       >
         <Flex
           p="5"
