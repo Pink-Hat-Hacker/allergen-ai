@@ -23,8 +23,9 @@ import {
   ExclamationTriangleIcon,
   GitHubLogoIcon,
   LinkedInLogoIcon,
-  VercelLogoIcon,
+  VercelLogoIcon
 } from "@radix-ui/react-icons";
+
 
 const App = () => {
   // Color changer to ensure state is always changing
@@ -47,6 +48,9 @@ const App = () => {
   const [prob, setProb] = useState();
   const [nutri, setNutriInfo] = useState([]);
   const { width } = useWindowSize();
+
+  // Collapsible icon and link list
+  const [open, setOpen] = React.useState(false);
 
   const handleFileUpload = async (file) => {
     try {
@@ -82,7 +86,8 @@ const App = () => {
         >
           allergen.ai
         </Heading>
-        <Flex gap="3" pr="5" pt="6">
+
+        <Flex gap="3" pr="5" pt="6" wrap={"wrap"}>
           <IconButton>
             <GitHubLogoIcon
               onClick={() =>
@@ -112,17 +117,23 @@ const App = () => {
           </IconButton>
         </Flex>
       </Flex>
-      
+
+      {/* Temporary error container. LogMeal free trial is up. */}
       <Flex pt={"5"} pb={"0"} align={"center"} justify={"center"}>
-        {/* Temporary error container. LogMeal free trial is up. */}
-        <Callout.Root color="red" size={"3"}>
+        <Callout.Root color="red" size={"3"} variant="surface">
           <Callout.Icon>
             <ExclamationTriangleIcon />
           </Callout.Icon>
-          <Callout.Text>
-            allergen-ai is DOWN for rebuild. My LogMeal API free trial is ...
-            depleted. If you would like to learn more about the project visit its
-            <Link href="https://github.com/pink-hat-hacker/allergen-ai"> GitHub repo </Link> or watch this <Link href="https://youtu.be/KKe5K4mbMAo"> Video</Link>.
+          <Callout.Text size={"5"}>
+            <u>allergen.ai</u> is <b>DOWN</b> for rebuild. My LogMeal API free
+            trial is ... depleted. If you would like to learn more about the
+            project visit its
+            <Link href="https://github.com/pink-hat-hacker/allergen-ai">
+              {" "}
+              GitHub repo{" "}
+            </Link>{" "}
+            or watch this{" "}
+            <Link href="https://youtu.be/KKe5K4mbMAo"> Video</Link>.
           </Callout.Text>
         </Callout.Root>
       </Flex>
@@ -134,9 +145,10 @@ const App = () => {
         gap="9"
         pl="5"
         pr="5"
-        style={{ paddingTop: "5%" }} 
+        style={{ paddingTop: "5%" }}
         // changed padding to 5% from 10% for error container
       >
+        {/* File Upload Container */}
         <Flex
           p="5"
           gap="3"
@@ -148,6 +160,7 @@ const App = () => {
           <FileUpload onFileUpload={handleFileUpload} />
         </Flex>
 
+        {/* Food, Ingredient, Allergen container */}
         <Flex
           p="5"
           gap="6"
@@ -224,6 +237,7 @@ const App = () => {
         </Flex>
       </Grid>
 
+      {/* Footer */}
       <Flex
         direction="column"
         align="center"
