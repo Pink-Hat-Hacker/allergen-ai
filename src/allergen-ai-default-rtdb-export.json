@@ -1,0 +1,305 @@
+{
+  "allergen": {
+    "dairy": {
+      "artificial butter flavor": "artificial butter flavor",
+      "butter": "butter",
+      "cheese": {
+        "cheddar": "cheddar",
+        "cheese": "cheese",
+        "cottage cheese": "cottage cheese",
+        "cream cheese": "cream cheese",
+        "mozzarella": "mozzarella",
+        "parmesan": "parmesan"
+      },
+      "ice cream": {
+        "custard": "custard",
+        "gelato": "gelato",
+        "ice cream": "ice cream",
+        "sherbert": "sherbert"
+      },
+      "milk": {
+        "bread": "bread",
+        "buttermilk": "buttermilk",
+        "condensed milk": "condensed milk",
+        "cream": "cream",
+        "evaporated milk": "evaporated milk",
+        "goat milk": "goat milk",
+        "half-and-half": "half-and-half",
+        "lactose": "lactose",
+        "margarine": "margarine",
+        "milk": "milk",
+        "milk protein": "milk protein",
+        "milk pudding": "milk pudding",
+        "milkfat": "milkfat",
+        "pudding": "pudding",
+        "skimmed milk": "skimmed milk"
+      },
+      "protein": {
+        "casein": "casein",
+        "whey": "whey",
+        "whey protein": "whey protein",
+        "whey protein isolate": "whey protein isolate"
+      },
+      "sour cream": "sour cream",
+      "yoghurt": "yoghurt",
+      "yogurt": "yogurt"
+    },
+    "egg": {
+      "baked goods": {
+        "bread": "bread",
+        "cake": "cake",
+        "chocolate chip cookie": "chocolate chip cookie",
+        "cookie": "cookie",
+        "pastry": "pastry"
+      },
+      "condiments": {
+        "hollandaise": "hollandaise",
+        "mayonnaise": "mayonnaise"
+      },
+      "egg": "egg",
+      "egg white": "egg white",
+      "egg whites": "egg whites",
+      "eggs": "eggs",
+      "foods with eggs": {
+        "chips": "chips",
+        "cracker": "cracker",
+        "eggnog": "eggnog",
+        "marshmallows": "marshmallow",
+        "marzipan": "marzipan",
+        "meringue": "meringue",
+        "nougat": "nougat",
+        "pancakes": "pancake",
+        "pasta": "pasta",
+        "pretzels": "pretzel",
+        "salad dressing": "salad dressing",
+        "tortilla": "tortilla",
+        "waffles": "waffle"
+      }
+    },
+    "fish": {
+      "anchovy": "anchovy",
+      "bass": "bass",
+      "catfish": "catfish",
+      "cod": "cod",
+      "fish": "fish",
+      "fish flavoring": "fish flavoring",
+      "fish gelatin": "fish gelatin",
+      "fish oil": "fish oil",
+      "fish sticks": "fish sticks",
+      "flounder": "flounder",
+      "grouper": "grouper",
+      "haddock": "haddock",
+      "hake": "hake",
+      "halibut": "halibut",
+      "herring": "herring",
+      "mackerel": "mackerel",
+      "mahi-mahi": "mahi-mahi",
+      "perch": "perch",
+      "pike": "pike",
+      "pollock": "pollock",
+      "salmon": "salmon",
+      "sardine": "sardine",
+      "scrod": "scrod",
+      "snapper": "snapper",
+      "sole": "sole",
+      "swordfish": "swordfish",
+      "tilapia": "tilapia",
+      "trout": "trout",
+      "tuna": "tuna"
+    },
+    "peanuts": {
+      "arachis oil": "arachis oil",
+      "beer nuts": "beer nuts",
+      "foods with peanuts": {
+        "artificial nuts": "artificial nuts",
+        "grains": "grains",
+        "granola": "granola",
+        "marzipan": "marzipan",
+        "mixed nuts": "mixed nuts",
+        "nougat": "nougat",
+        "trail mix": "trail mix"
+      },
+      "ground nuts": "ground nuts",
+      "lupin": "lupin",
+      "mandelonas": "madelonas",
+      "monkey nuts": "monkey nuts",
+      "nut meal": "nut meal",
+      "nut meat": "nut meat",
+      "nut pieces": "nut pieces",
+      "peanut butter": "peanut butter",
+      "peanut flour": "peanut flour",
+      "peanut oil": "peanut oil",
+      "peanuts": "peanuts",
+      "protein": {
+        "peanut protein": "peanut protein"
+      },
+      "sauces": {
+        "enchilada sauce": "enchilada sauce",
+        "mole": "mole"
+      }
+    },
+    "sesame": {
+      "benne": {
+        "benne seed": "benne seed",
+        "benniseed": "benniseed"
+      },
+      "foods with sesame": {
+        "bread crumbs": "bread crumbs",
+        "cracker": "cracker",
+        "dressing": "dressing",
+        "falafel": "falafel",
+        "halvah": "halvah",
+        "hummus": "hummus",
+        "noodles": "noodles",
+        "pasta": "pasta",
+        "salad dressing": "salad dressing",
+        "sushi": "sushi",
+        "tahini": "tahini"
+      },
+      "gingelly": {
+        "gingelly oil": "gingelly oil"
+      },
+      "sesame flour": "sesame flour",
+      "sesame oil": "sesame oil",
+      "sesame paste": "sesame paste",
+      "sesame salt": "sesame salt",
+      "sesame seed": "sesame seed",
+      "sesame seeds": "sesame seeds"
+    },
+    "shellfish": {
+      "abalone": "abalone",
+      "barnacle": "barnacle",
+      "clams": "clams",
+      "cockle": "cockle",
+      "crab": "crab",
+      "crawfish": "crawfish",
+      "cuttlefish": "cuttlefish",
+      "fish sauce": "fish sauce",
+      "fish stock": "fish stock",
+      "foods with shellfish": {
+        "seafood flavoring": "seafood flavoring"
+      },
+      "krill": "krill",
+      "limpet": "limpet",
+      "lobster": "lobster",
+      "mussels": "mussels",
+      "oysters": "oysters",
+      "prawns": "prawns",
+      "scallops": "scallops",
+      "sea cucumber": "sea cucumber",
+      "sea urchin": "sea urchin",
+      "shrimp": "shrimp",
+      "snails": "snails",
+      "squid": "squid",
+      "whelk": "whelk"
+    },
+    "soy": {
+      "foods with soy": {
+        "miso": "miso",
+        "okra": "okra",
+        "shoyu": "shoyu",
+        "tamari": "tamari",
+        "tempeh": "tempeh",
+        "tofu": "tofu"
+      },
+      "protein": {
+        "soy protein": "soy protein",
+        "textured vegetable protein": "textured vegetable protein"
+      },
+      "soy cheese": "soy cheese",
+      "soy fiber": "soy fiber",
+      "soy flour": "soy flour",
+      "soy milk": "soy milk",
+      "soy oil": "soy oil",
+      "soy sauce": "soy sauce",
+      "soybean": {
+        "edamame": "edamame",
+        "natto": "natto",
+        "soybean": "soybean"
+      }
+    },
+    "tree nuts": {
+      "almonds": "almonds",
+      "artificial nuts": "artificial nuts",
+      "beechnut": "beechnut",
+      "black walnut": "black walnut",
+      "brazil nut": "brazil nut",
+      "butternut": {
+        "white walnut": "white walnut"
+      },
+      "cashew": "cashew",
+      "chestnut": "chestnut",
+      "chinquapin nut": "chinquapin nut",
+      "coconut": "coconut",
+      "gianduja": "gianduja",
+      "ginkgo nut": "ginkgo nut",
+      "hazelnut": "hazelnut",
+      "hickory nut": "hickory nut",
+      "lychee nut": "lychee nut",
+      "macadamia nut": "macadamia nut",
+      "marzipan": "marzipan",
+      "nangai nut": "nangai",
+      "natural nut extract": "natural nut extract",
+      "nut butters": {
+        "almond butter": "almond butter",
+        "cashew butter": "cashew butter",
+        "nutella": "nutella",
+        "pecan butter": "pecan butter",
+        "walnut butter": "walnut butter"
+      },
+      "nut meal": "nut meal",
+      "nut meat": "nut meat",
+      "nut milk": {
+        "almond milk": "almond milk",
+        "cashew milk": "cashew milk",
+        "coconut milk": "coconut milk"
+      },
+      "nut oil": {
+        "almond oil": "almond oil",
+        "peanut oil": "peanut oil",
+        "walnut oil": "walnut oil"
+      },
+      "pecan": "pecan",
+      "pine nut": "pine nut",
+      "pine nuts": "pine nuts",
+      "pistachio": "pistachio",
+      "praline": "praline",
+      "shea nut": "shea nut",
+      "walnuts": "walnut"
+    },
+    "wheat": {
+      "bulgur": "bulgur",
+      "club wheat": "club wheat",
+      "durum": "durum",
+      "einkorn": "einkorn",
+      "emmer": "emmer",
+      "farina": "farina",
+      "farro": "farro",
+      "flour": {
+        "all-purpose flour": "all-purpose flour",
+        "bread flour": "bread flour",
+        "cake flour": "cake flour",
+        "flour": "flour"
+      },
+      "foods with wheat": {
+        "bread crumbs": "bread crumbs",
+        "cereal": "cereal",
+        "chocolate chip cookie": "chocolate chip cookie",
+        "cookie": "cookie",
+        "couscous": "couscous",
+        "crackers": "cracker",
+        "pasta": "pasta",
+        "seitan": "seitan",
+        "semolina": "semolina",
+        "soy sauce": "soy sauce"
+      },
+      "protein": {
+        "wheat protein isolate": "wheat protein isolate"
+      },
+      "spelt": "spelt",
+      "sprouted wheat": "sprouted wheat",
+      "starch": "starch",
+      "wheat grass": "wheat grass"
+    }
+  }
+}
