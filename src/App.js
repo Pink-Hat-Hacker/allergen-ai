@@ -143,7 +143,7 @@ const App = () => {
             <ExclamationTriangleIcon />
           </Callout.Icon>
           <Callout.Text size={"5"}>
-            <u>allergen.ai</u> will be <b>DOWN</b> for rebuild on Feb 11th. My LogMeal API free
+            <u>allergen.ai</u> will be <b>DOWN</b> for rebuild on Feb 11th. Also prefers JPG rn, compression is broken. My LogMeal API free
             trial is ... depleted. If you would like to learn more about the
             project visit its
             <Link href="https://github.com/pink-hat-hacker/allergen-ai">
