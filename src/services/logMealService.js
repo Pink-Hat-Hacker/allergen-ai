@@ -28,8 +28,11 @@ const convertAndCompressImage = async (file, targetSizeInMB) => {
   console.log("It's not a JPEG. Converting and compressing...");
 
   const dataUrl = filetoDataURL(file);
-  const blob = urltoBlob(dataUrl);
-  const compressedBlob = compressAccurately(blob, targetSizeInMB*900);
+  console.log(dataUrl);
+  const blob = await urltoBlob(dataUrl);
+  console.log(blob);
+  const compressedBlob = await compressAccurately(blob, targetSizeInMB*900);
+  console.log(compressedBlob);
   return new File([compressedBlob], file.name, { type: 'image/jpeg' });
 };
 

@@ -50,7 +50,7 @@ const App = () => {
   const { width } = useWindowSize();
 
   // Collapsible icon and link list
-  const [open, setOpen] = React.useState(false);
+  //const [open, setOpen] = React.useState(false);
 
   const handleFileUpload = async (file) => {
     try {
@@ -119,13 +119,31 @@ const App = () => {
       </Flex>
 
       {/* Temporary error container. LogMeal free trial is up. */}
-      <Flex pt={"5"} pb={"0"} align={"center"} justify={"center"}>
+      {/* <Flex pt={"5"} pb={"0"} align={"center"} justify={"center"}>
         <Callout.Root color="red" size={"3"} variant="surface">
           <Callout.Icon>
             <ExclamationTriangleIcon />
           </Callout.Icon>
           <Callout.Text size={"5"}>
             <u>allergen.ai</u> is <b>DOWN</b> for rebuild. My LogMeal API free
+            trial is ... depleted. If you would like to learn more about the
+            project visit its
+            <Link href="https://github.com/pink-hat-hacker/allergen-ai">
+              {" "}
+              GitHub repo{" "}
+            </Link>{" "}
+            or watch this{" "}
+            <Link href="https://youtu.be/KKe5K4mbMAo"> Video</Link>.
+          </Callout.Text>
+        </Callout.Root>
+      </Flex> */}
+      <Flex pt={"5"} pb={"0"} align={"center"} justify={"center"}>
+        <Callout.Root color="orange" size={"3"} variant="surface">
+          <Callout.Icon>
+            <ExclamationTriangleIcon />
+          </Callout.Icon>
+          <Callout.Text size={"5"}>
+            <u>allergen.ai</u> will be <b>DOWN</b> for rebuild on Feb 11th. My LogMeal API free
             trial is ... depleted. If you would like to learn more about the
             project visit its
             <Link href="https://github.com/pink-hat-hacker/allergen-ai">
